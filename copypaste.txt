@@ -9,3 +9,11 @@ Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.5-
   <location>Microsoft-Windows-Sysmon/Operational</location>
   <log_format>eventchannel</log_format>
 </localfile>
+
+
+
+
+<localfile>
+  <location>C:\Windows\System32\LogFiles\Firewall\pfirewall.log</location>
+  <log_format>syslog</log_format>
+</localfile>
