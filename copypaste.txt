@@ -17,3 +17,14 @@ Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.5-
   <location>C:\Windows\System32\LogFiles\Firewall\pfirewall.log</location>
   <log_format>syslog</log_format>
 </localfile>
+
+
+Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -value 0
+
+Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+
+Start-Service TermService
+
+Get-Service TermService
+
+
