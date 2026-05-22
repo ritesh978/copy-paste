@@ -28,3 +28,20 @@ Start-Service TermService
 Get-Service TermService
 
 
+
+
+
+
+<Sysmon schemaversion="4.50">
+  <EventFiltering>
+    <!-- Process Creation -->
+    <ProcessCreate onmatch="include">
+      <!-- Capture PowerShell executions -->
+      <Image condition="is">powershell.exe</Image>
+      <CommandLine condition="contains">-enc</CommandLine>
+    </ProcessCreate>
+  </EventFiltering>
+</Sysmon>
+
+
+
