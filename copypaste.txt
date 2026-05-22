@@ -45,3 +45,13 @@ Get-Service TermService
 
 
 
+$command = 'Write-Host "Hello Sysmon"'
+$bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
+[Convert]::ToBase64String($bytes)
+
+
+powershell.exe -enc <Base64String>
+
+
+
+
